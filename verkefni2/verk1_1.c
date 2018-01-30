@@ -9,22 +9,104 @@
 |*  This program instructs your robot to move forward at full power for three seconds.  There is a    *|
 |*  two second pause at the beginning of the program.                                                 *|                                                                   *|                 *|
 \*-----------------------------------------------------------------------------------------------4246-*/
-int power = 127;
-int rewerse = -127;
+	int power = 127;
+	int rewerse = -127;
 
-void drive(){
+  void drive(){
+	//Forward 0.5 meter
 	motor[rightMotor] = power;
 	motor[leftMotor]  = power;
 	wait1Msec(940);
 
+	//Stop for 2 second
 	motor[rightMotor] = 0;
 	motor[leftMotor]  = 0;
 	wait1Msec(2000);
 
+	//Backward 0.5 meter
 	motor[rightMotor] = rewerse;
 	motor[leftMotor] = rewerse;
 	wait1Msec(940);
 
+	//Stop for 2 second
+	motor[rightMotor] = 0;
+	motor[leftMotor]  = 0;
+	wait1Msec(2000);
+
+	//Forward 1 meter
+	motor[rightMotor] = power;
+	motor[leftMotor]  = power;
+	wait1Msec(1880);
+
+	//Stop for 2 second
+	motor[rightMotor] = 0;
+	motor[leftMotor]  = 0;
+	wait1Msec(2000);
+
+	//Backward 1 meter
+	motor[rightMotor] = rewerse;
+	motor[leftMotor] = rewerse;
+	wait1Msec(1880);
+
+	//Stop for 2 second
+	motor[rightMotor] = 0;
+	motor[leftMotor]  = 0;
+	wait1Msec(2000);
+
+	//Forward 1.5 meter
+	motor[rightMotor] = power;
+	motor[leftMotor]  = power;
+	wait1Msec(2820);
+
+	//Stop for 2 second
+	motor[rightMotor] = 0;
+	motor[leftMotor]  = 0;
+	wait1Msec(2000);
+
+	//Backward 1.5 meter
+	motor[rightMotor] = rewerse;
+	motor[leftMotor] = rewerse;
+	wait1Msec(2820);
+
+	//Stop for 2 second
+	motor[rightMotor] = 0;
+	motor[leftMotor]  = 0;
+	wait1Msec(2000);
+
+	//Forward 2 meter
+	motor[rightMotor] = power;
+	motor[leftMotor]  = power;
+	wait1Msec(3760);
+
+	//Stop for 2 second
+	motor[rightMotor] = 0;
+	motor[leftMotor]  = 0;
+	wait1Msec(2000);
+
+	//Backward 2 meter
+	motor[rightMotor] = rewerse;
+	motor[leftMotor] = rewerse;
+	wait1Msec(3760);
+
+	//Stop for 2 second
+	motor[rightMotor] = 0;
+	motor[leftMotor]  = 0;
+	wait1Msec(2000);
+
+	//Forward 2.5 meter
+	motor[rightMotor] = power;
+	motor[leftMotor]  = power;
+	wait1Msec(4700);
+
+	//Stop for 2 second
+	motor[rightMotor] = 0;
+	motor[leftMotor]  = 0;
+	wait1Msec(2000);
+
+	//Backward 2.5 meter
+	motor[rightMotor] = rewerse;
+	motor[leftMotor] = rewerse;
+	wait1Msec(4700);
 
 }
 
