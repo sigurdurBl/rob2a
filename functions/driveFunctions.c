@@ -1,4 +1,4 @@
-
+#include "../headers/myconstants.h";
 void drive(int dist,bool bf){
 	int dir = (bf) ? (1):(-1);
 	while(abs(SensorValue[leftEncoder]) < dist)
@@ -23,3 +23,22 @@ void drive(int dist,bool bf){
 		}
 	}
 };
+
+void resetEncoder(){
+	SensorValue[rightEncoder] = 0;
+	SensorValue[leftEncoder] = 0;
+
+};
+
+void turn(int deg,bool lr){
+	while(deg*BASETURN > abs(Sensorvalue[leftEncoder])){
+	if(lr){
+		motor[rightMotor] = 80;
+		motor[leftMotor] = -80;
+	}
+	else{
+		motor[rightMotor] = -80;
+		motor[leftMotor] = 80;
+	}
+}
+}
