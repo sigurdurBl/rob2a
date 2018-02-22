@@ -26,35 +26,38 @@
 |*    Digital - Port 3,4  leftEncoder         VEX Quadrature enc.   Left side encoder                 *|
 \*-----------------------------------------------------------------------------------------------4246-*/
 #include "../functions/Drivefunctions.c";
+bool lr = true;
+int nopower = 0;
 
 // Functions Prototypes
 
 
 // Declare Global Variables     /* 'rotations' will be a counter for every 360 encoder clicks */
 
-
+int  dist = 429.5;
 
 
 //+++++++++++++++++++++++++++++++++++++++++++++| MAIN |+++++++++++++++++++++++++++++++++++++++++++++++
 task main()
 {
   wait1Msec(2000);        // Wait 2000 milliseconds before continuing.
+  	for(int i=0; i<3; i++){
+
+  		resetEncoder();
+   		drive(dist,true);
+
+   		resetEncoder();
+    	turn(90,lr);
+    	lr = false;
+    	motor[rightMotor] = nopower;
+	  	motor[leftMotor]  = nopower;
+	  	wait1Msec(940);
+
+
+  	}
+
   	resetEncoder();
-   	drive(BASEDIST,true);
+    drive(dist,true);
 
-    resetEncoder();
-    turn(90,false);
 
-  	int i;
-  	for(i=0; i<2; i++)
-  	{
-  	resetEncoder();
-    drive(BASEDIST,true);
-
-    resetEncoder();
-    turn(90,true);
-
-  }
-    resetEncoder();
-    drive(BASEDIST,true);
 }
