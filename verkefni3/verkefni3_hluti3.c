@@ -27,7 +27,7 @@
 
 //+++++++++++++++++++++++++++++++++++++++++++++| MAIN |+++++++++++++++++++++++++++++++++++++++++++++++
 #include "../functions/Drivefunctions.c";
-int counter = 0;
+
 bool lr = true;
 int nopower = 0;
 int  dist = 429.5;
@@ -39,21 +39,7 @@ int  dist = 429.5;
 
 
 task verk3(){
-	  wait1Msec(2000);        // Wait 2000 milliseconds before continuing.
-  	while(counter<3){
 
-
-  		resetEncoder();
-   		drive(dist,true);
-
-   		resetEncoder();
-    	turn(90,lr);
-    	lr = false;
-    	motor[rightMotor] = nopower;
-	  	motor[leftMotor]  = nopower;
-	  	wait1Msec(940);
-	  	counter++;
-  	}
   	resetEncoder();
     drive(dist,true);
 }
@@ -62,8 +48,8 @@ task main()
 {
 	StartTask(verk3);
 		while(true){
-		if(vexRT[Btn7D] ==1){
-		StopTask(verk3);
+		if(vexRT[Btn8D] ==1){
+		StopAllTasks();
 		}
 	}
 }
