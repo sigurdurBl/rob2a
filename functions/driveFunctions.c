@@ -32,7 +32,7 @@ void resetEncoder(){
 
 void turn(int deg,bool lr){
 
-	while(deg*BASETURN > abs(Sensorvalue[leftEncoder])){
+	while(deg*BASETURN > abs(SensorValue[leftEncoder])){
 	if(lr){
 		motor[rightMotor] = 80;
 		motor[leftMotor] = -80;
