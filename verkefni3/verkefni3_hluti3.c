@@ -32,10 +32,6 @@ bool lr = true;
 int nopower = 0;
 int  dist = 429.5;
 
-// Functions Prototypes
-
-
-// Declare Global Variables     /* 'rotations' will be a counter for every 360 encoder clicks */
 
 
 task verk3(){
@@ -53,40 +49,3 @@ task main()
 		}
 	}
 }
-
-
-//  while(1 == 1)
-//  {
-//    //Driving Motor Control
-//    motor[leftMotor]  = (vexRT[Ch2] + vexRT[Ch1])/2;
-//    motor[rightMotor] = (vexRT[Ch2] - vexRT[Ch1])/2;
-
-//    //Arm Control
-//    if(vexRT[Btn6U] == 1)
-//    {
-//      motor[armMotor] = -40;
-//    }
-//    else if(vexRT[Btn6D] == 1)
-//    {
-//      motor[armMotor] = 40;
-//    }
-//    else
-//    	motor[armMotor] = 0;
-//    {
-
-//  }
-//  if(vexRT[Btn5U] == 1)
-//    {
-//      motor[ClawMotor] = -40;
-//    }
-//    else if(vexRT[Btn5D] == 1)
-//    {
-//      motor[ClawMotor] = 40;
-//    }
-//    else
-//    	motor[ClawMotor] = 0;
-//    {
-
-//  }
-//}
-//}

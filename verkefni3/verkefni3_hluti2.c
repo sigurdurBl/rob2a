@@ -29,11 +29,9 @@ task main()
 {
   while(1 == 1)
   {
-    //Driving Motor Control
     motor[leftMotor]  = (vexRT[Ch2] + vexRT[Ch1])/2;
     motor[rightMotor] = (vexRT[Ch2] - vexRT[Ch1])/2;
 
-    //Arm Control
     if(vexRT[Btn6U] == 1)
     {
       motor[armMotor] = -40;
