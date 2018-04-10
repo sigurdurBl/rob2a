@@ -32,40 +32,31 @@
 #include "../functions/Drivefunctions.c";
 bool lr = true;
 
-//task lights_off(){
-//	while(true){
-//	if(SensorValue(LightSensor) >600){
-//		StopAllTasks();
 
-//	}// if end
-//	} //while end
-//} //Task end
 
 void drive(){
-	wait1Msec(2000);							// Robot waits for 2000 milliseconds before executing program
+	wait1Msec(2000);
+	SensorValue[rightEncoder] = 0;
+	SensorValue[leftEncoder]  = 0;
 
-	SensorValue[rightEncoder] = 0;	  // Set the encoder so that it starts counting at 0
-	SensorValue[leftEncoder]  = 0;	  // Set the encoder so that it starts counting at 0
-
-	while(1 == 1)		// Creates an infinite loop, since "true" always evaluates to true
+	while(1 == 1)
 	{
-		if(SensorValue[rightEncoder] == SensorValue[leftEncoder]) // If rightEncoder has counted the same amount as leftEncoder:
+		if(SensorValue[rightEncoder] == SensorValue[leftEncoder])
 		{
-			// Move Forward
-			motor[rightMotor] = 80;		    // Right Motor is run at power level 80
-			motor[leftMotor]  = 80;		    // Left Motor is run at power level 80
+
+			motor[rightMotor] = 80;
+			motor[leftMotor]  = 80;
 		}
-		else if(SensorValue[rightEncoder] > SensorValue[leftEncoder])	// If rightEncoder has counted more encoder counts
-		{
-			// Turn slightly right
-			motor[rightMotor] = 60;		    // Right Motor is run at power level 60
-			motor[leftMotor]  = 80;		    // Left Motor is run at power level 80
+		else if(SensorValue[rightEncoder] > SensorValue[leftEncoder])
+
+			motor[rightMotor] = 60;
+			motor[leftMotor]  = 80;
 		}
-		else	// Only runs if leftEncoder has counted more encoder counts
+		else
 		{
-			// Turn slightly left
-			motor[rightMotor] = 80;		    // Right Motor is run at power level 80
-			motor[leftMotor]  = 60;		    // Left Motor is run at power level 60
+
+			motor[rightMotor] = 80;
+			motor[leftMotor]  = 60;
 		}
 	}
 }
