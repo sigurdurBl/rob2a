@@ -1,6 +1,6 @@
-#pragma config(Sensor, in1,    lineFollowerLEFT, sensorLineFollower)
+#pragma config(Sensor, in1,    lineFollowerRIGHT, sensorLineFollower)
 #pragma config(Sensor, in2,    lineFollowerCENTER, sensorLineFollower)
-#pragma config(Sensor, in3,    lineFollowerRIGHT, sensorLineFollower)
+#pragma config(Sensor, in3,    lineFollowerLEFT, sensorLineFollower)
 #pragma config(Motor,  port2,           rightMotor,    tmotorServoContinuousRotation, openLoop)
 #pragma config(Motor,  port3,           leftMotor,     tmotorServoContinuousRotation, openLoop, reversed)
 
@@ -34,20 +34,10 @@ task main()
 {
   wait1Msec(2000);
 
-  int threshold = 2300;
+  int threshold = 2000;
 
   while(true)
   {
-
-    displayLCDCenteredString(0, "LEFT  CNTR  RGHT");
-    displayLCDPos(1,0);
-    displayNextLCDNumber(SensorValue(lineFollowerLEFT));
-    displayLCDPos(1,6);
-    displayNextLCDNumber(SensorValue(lineFollowerCENTER));
-    displayLCDPos(1,12);
-    displayNextLCDNumber(SensorValue(lineFollowerRIGHT));
-
-
 
     if(SensorValue(lineFollowerRIGHT) > threshold)
     {
