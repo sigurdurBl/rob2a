@@ -38,6 +38,9 @@ task main()
 
   while(true)
   {
+  	if(vexRT[Btn8D] ==1){
+		StopAllTasks();
+		}
 
     if(SensorValue(lineFollowerRIGHT) > threshold)
     {
