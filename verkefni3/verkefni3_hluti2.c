@@ -44,6 +44,19 @@ task main()
     	motor[armMotor] = 0;
     {
 
+    if(vexRT[Btn5U] == 1)
+    {
+      motor[ClawMotor] = -40;
+    }
+    else if(vexRT[Btn5D] == 1)
+    {
+      motor[ClawMotor] = 40;
+    }
+    else
+    	motor[ClawMotor] = 0;
+    {
+
   }
+}
 }
 }
