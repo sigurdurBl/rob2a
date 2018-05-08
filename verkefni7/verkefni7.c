@@ -79,7 +79,7 @@ if(SensorValue(lineFollowerLEFT) > threshold)
 }
 
 task verk4(){
-wait1Msec(2000);
+
 while(true){
 if(vexRT[Btn8D] ==1){
 	StopAllTasks();
